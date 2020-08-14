@@ -76,5 +76,5 @@ resource "aws_api_gateway_deployment" "production" {
   rest_api_id = aws_api_gateway_rest_api.main.id
   stage_name  = "prod"
 
-  stage_description = "HASH=${md5(file("../../modules/apigw/main.tf"))}"
+  stage_description = "HASH=${md5(file("../modules/apigw/main.tf"))}"
 }

@@ -5,13 +5,10 @@ variable "region" {
 
 variable "prefix" {
   description = "リソース名のPrefix"
-  default = "test"
+  default     = "ts"
 }
 
 variable "project" {
   description = "リソース名のProject"
-  default = "sample"
-}
-
-variable "exe_env" {
+  default     = "sample"
 }

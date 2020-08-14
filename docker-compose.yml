@@ -1,25 +1,13 @@
 version: '3'
 
 services:
-  tf_dev:
+  terraform:
     image: hashicorp/terraform:latest
     container_name: terraform_env
     volumes:
       # - ~/.aws:/root/.aws:ro
       - ./infrastructure:/workdir
-    working_dir: "/workdir/service/dev"
-    environment:
-      - AWS_ACCESS_KEY_ID
-      - AWS_SECRET_ACCESS_KEY
-      - AWS_REGION
-
-  tf_stg:
-    image: hashicorp/terraform:latest
-    container_name: terraform_env
-    volumes:
-      # - ~/.aws:/root/.aws:ro
-      - ./infrastructure:/workdir
-    working_dir: "/workdir/service/stg"
+    working_dir: "/workdir/service"
     environment:
       - AWS_ACCESS_KEY_ID
       - AWS_SECRET_ACCESS_KEY

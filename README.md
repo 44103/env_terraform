@@ -10,17 +10,18 @@ terraform.tfvars.exampleファイルをterraform.tfvarsにリネームし、使�
 ## コンテナ起動
 コマンド毎に使い切りのコンテナを建てる。  
 ```bash
-docker-compose run --rm tf_dev fmt
-docker-compose run --rm tf_dev init
-docker-compose run --rm tf_dev plan
-docker-compose run --rm tf_dev apply -auto-approve
-docker-compose run --rm tf_dev destroy -auto-approve
+docker-compose run --rm terraform fmt
+docker-compose run --rm terraform validate
+docker-compose run --rm terraform init
+docker-compose run --rm terraform plan
+docker-compose run --rm terraform apply -auto-approve
+docker-compose run --rm terraform destroy -auto-approve
 ```
 
 # Dev, Stg環境切り替え
 ```bash
-docker-compose run --rm tf_dev fmt
-docker-compose run --rm tf_stg fmt
+docker-compose run --rm terraform workspace select dev
+docker-compose run --rm terraform workspace select stg
 ```
 
 # 参考文献
