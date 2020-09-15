@@ -5,13 +5,18 @@ variable "region" {
 
 variable "prefix" {
   description = "リソース名のPrefix"
-  default = "test"
+  default     = "test"
 }
 
 variable "project" {
   description = "リソース名のProject"
-  default = "sample"
+  default     = "sample"
 }
 
 variable "exe_env" {
+}
+
+
+locals {
+  aws_name = join("_", [var.prefix, var.project])
 }

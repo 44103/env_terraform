@@ -1,4 +1,4 @@
 module "service" {
-  source = "../"
+  source  = "../"
   exe_env = var.exe_env
 }
